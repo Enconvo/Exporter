@@ -1,0 +1,43 @@
+{
+  "$schema": "https://enconvo.com/schemas/extension.json",
+  "version": "0.0.3",
+  "author": "EnconvoAI",
+  "license": "MIT",
+  "categories": [
+    "File"
+  ],
+  "type": "module",
+  "name": "exporter",
+  "title": "Exporter",
+  "description": "Export context messages to file.",
+  "icon": "icon.png",
+  "minAppVersion": "1.4.9",
+  "commands": [
+    {
+      "name": "export_markdown",
+      "title": "Save as Markdown",
+      "description": "Export context messages to Markdown file.",
+      "icon": "md.png",
+      "mode": "no-view",
+      "preferences": []
+    }
+  ],
+  "dependencies": {
+    "@enconvo/api": "^0.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.17.14",
+    "eslint": "^8.33.0",
+    "prettier": "^2.8.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "npm run lint --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "format:check": "prettier --list-different \"**/*.ts\"",
+    "build": "enconvo",
+    "dev": "enconvo --dev"
+  }
+}
