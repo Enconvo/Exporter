@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@enconvo/api':
-    specifier: ^0.1.108
-    version: 0.1.108
+    specifier: /Users/ysnows/Documents/Project/enconvo.nodejs/enconvo_api
+    version: link:../../enconvo.nodejs/enconvo_api
 
 devDependencies:
   '@types/node':
@@ -32,11 +32,6 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /@enconvo/api@0.1.108:
-    resolution: {integrity: sha512-8gXLow6r8bThCqqq0le8U1SHCf/fuAxK00SpveUAPSJtLO45hZNLGnoT4bhgk5SrYU8K/WqFUftQqfR6ruPXKQ==}
-    hasBin: true
-    dev: false
 
   /@esbuild/android-arm64@0.18.20:
     resolution: {integrity: sha512-Nz4rJcchGDtENV0eMKUNa6L12zz2zBDXuhj/Vjh18zGqB44Bi7MBMSXjgunJgjRhCmKOjnPuZp4Mb6OKqtMHLQ==}

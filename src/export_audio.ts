@@ -1,6 +1,5 @@
 import { Action, ActionProps, TTS, res, showToast } from "@enconvo/api";
 import { Exporter, Clipboard } from "@enconvo/api";
-import { writeFileSync } from "fs";
 
 
 export default async function main(req: Request) {
@@ -26,10 +25,11 @@ export default async function main(req: Request) {
 
   console.log("path", path)
   res.write({
-    content: `Exporting audio to ${path}`,
+    content: `Saving audio to "${path}"`,
     overwrite: true,
     loading: true
   })
+  await new Promise(resolve => setTimeout(resolve, 5000000));
 
   await TTS.ttsToFile({ text: content, outputFile: path, ttsOptions: options.tts_providers })
 
@@ -43,5 +43,6 @@ export default async function main(req: Request) {
     content: `Audio file saved: [${path}](file:///${path})`,
     actions: actions
   }
+
   return output
 }

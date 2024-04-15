@@ -40,7 +40,7 @@
     }
   ],
   "dependencies": {
-    "@enconvo/api": "^0.1.108"
+    "@enconvo/api": "/Users/ysnows/Documents/Project/enconvo.nodejs/enconvo_api"
   },
   "devDependencies": {
     "@types/node": "^18.19.31",
