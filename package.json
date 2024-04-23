@@ -11,7 +11,7 @@
   "title": "Exporter",
   "description": "Export context messages to file.",
   "icon": "icon.png",
-  "minAppVersion": "1.4.9",
+  "minAppVersion": "1.8.8",
   "commands": [
     {
       "name": "export_markdown",
@@ -35,12 +35,20 @@
           "required": false,
           "default": "default",
           "title": "TTS Provider"
+        },
+        {
+          "name": "concurrency",
+          "description": "The number of concurrent requests to make.",
+          "type": "number",
+          "required": false,
+          "default": 3,
+          "title": "Concurrency"
         }
       ]
     }
   ],
   "dependencies": {
-    "@enconvo/api": "/Users/ysnows/Documents/Project/enconvo.nodejs/enconvo_api"
+    "@enconvo/api": "^0.1.123"
   },
   "devDependencies": {
     "@types/node": "^18.19.31",
