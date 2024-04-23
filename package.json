@@ -1,6 +1,6 @@
 {
   "$schema": "https://enconvo.com/schemas/extension.json",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "EnconvoAI",
   "license": "MIT",
   "categories": [
@@ -48,7 +48,7 @@
     }
   ],
   "dependencies": {
-    "@enconvo/api": "^0.1.123"
+    "@enconvo/api": "^0.1.124"
   },
   "devDependencies": {
     "@types/node": "^18.19.31",
