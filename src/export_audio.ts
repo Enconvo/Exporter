@@ -1,11 +1,11 @@
-import { PlayPoolItem } from "@enconvo/api";
-import { Action, ActionProps, ServiceProvider, TTS, isTextFile, res, showToast, uuid } from "@enconvo/api";
+import { EnconvoResponse, FileUtil, PlayPoolItem, RequestOptions } from "@enconvo/api";
+import { Action, ServiceProvider, TTS, res, uuid } from "@enconvo/api";
 import { Exporter, Clipboard } from "@enconvo/api";
 
 
-export default async function main(req: Request) {
+export default async function main(req: Request): Promise<EnconvoResponse> {
 
-  const { options } = await req.json()
+  const options: RequestOptions = await req.json()
   const { text, context } = options
 
 
@@ -13,7 +13,7 @@ export default async function main(req: Request) {
   let saveName: string | null = null
 
   const textFilePaths = filePaths.filter((filePath) => {
-    return isTextFile(filePath)
+    return FileUtil.isTextFile(filePath)
   }).map((filePath) => {
     return {
       id: uuid(),
@@ -22,6 +22,7 @@ export default async function main(req: Request) {
     }
   })
   let docContent = null
+
   if (textFilePaths.length > 0) {
     // 第一个文件的文件名
     saveName = `${textFilePaths[0].filePath.split("/").pop()}.mp3` || "-audio.mp3"
@@ -35,7 +36,6 @@ export default async function main(req: Request) {
       return doc.pageContent
     }).join("\n\n")
   }
-
 
   let content = docContent || text || context || await Clipboard.selectedText();
   if (!saveName) {

@@ -1,0 +1,25 @@
+    {
+      "name": "export_audio",
+      "title": "Save as Audio File",
+      "description": "Export context content to Audio file.",
+      "icon": "audio.png",
+      "mode": "no-view",
+      "preferences": [
+        {
+          "name": "tts_providers",
+          "description": "The TTS provider to use.",
+          "type": "extension",
+          "required": false,
+          "default": "default",
+          "title": "TTS Provider"
+        },
+        {
+          "name": "concurrency",
+          "description": "The number of concurrent requests to make.",
+          "type": "number",
+          "required": false,
+          "default": 3,
+          "title": "Concurrency"
+        }
+      ]
+    }

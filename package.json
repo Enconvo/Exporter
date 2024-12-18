@@ -1,6 +1,6 @@
 {
   "$schema": "https://enconvo.com/schemas/extension.json",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "EnconvoAI",
   "license": "MIT",
   "categories": [
@@ -20,42 +20,17 @@
       "icon": "md.png",
       "mode": "no-view",
       "preferences": []
-    },
-    {
-      "name": "export_audio",
-      "title": "Save as Audio File",
-      "description": "Export context content to Audio file.",
-      "icon": "audio.png",
-      "mode": "no-view",
-      "preferences": [
-        {
-          "name": "tts_providers",
-          "description": "The TTS provider to use.",
-          "type": "extension",
-          "required": false,
-          "default": "default",
-          "title": "TTS Provider"
-        },
-        {
-          "name": "concurrency",
-          "description": "The number of concurrent requests to make.",
-          "type": "number",
-          "required": false,
-          "default": 3,
-          "title": "Concurrency"
-        }
-      ]
     }
   ],
   "dependencies": {
-    "@enconvo/api": "^0.1.125"
+    "@enconvo/api": "^0.1.150"
   },
   "devDependencies": {
-    "@types/node": "^18.19.31",
-    "eslint": "^8.57.0",
-    "prettier": "^2.8.8",
-    "tsup": "^7.2.0",
-    "typescript": "^5.4.5"
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "lint": "eslint src",
