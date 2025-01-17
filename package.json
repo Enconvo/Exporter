@@ -23,7 +23,7 @@
     }
   ],
   "dependencies": {
-    "@enconvo/api": "^0.1.150"
+    "@enconvo/api": "^0.1.161"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
