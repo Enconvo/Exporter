@@ -1,4 +1,4 @@
-import { EnconvoResponse, RequestOptions, showToast } from "@enconvo/api";
+import { EnconvoResponse, RequestOptions, Runtime } from "@enconvo/api";
 import { Exporter, Clipboard } from "@enconvo/api";
 import { writeFileSync } from "fs";
 
@@ -6,9 +6,9 @@ import { writeFileSync } from "fs";
 export default async function main(req: Request): Promise<EnconvoResponse> {
 
   const options: RequestOptions = await req.json()
-  const { text, context } = options
+  const { user_input_text, input_text, selection_text, text, context } = options
 
-  let content = text || context || await Clipboard.selectedText();
+  let content = user_input_text || input_text || selection_text || text || context || await Clipboard.selectedText();
 
   if (!content) {
     throw new Error("No text to process")
@@ -23,10 +23,13 @@ export default async function main(req: Request): Promise<EnconvoResponse> {
 
   console.log("path", path)
   writeFileSync(path, content);
-  await showToast({
-    title: "Exported Success",
-  })
 
-  return ""
+  if (!Runtime.isInteractiveMode()) {
+    return EnconvoResponse.json({
+      result: 'success'
+    })
+  }
+
+  return EnconvoResponse.none()
 
 }

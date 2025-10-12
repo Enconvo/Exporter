@@ -1,6 +1,6 @@
 {
   "$schema": "https://enconvo.com/schemas/extension.json",
-  "version": "0.0.6",
+  "version": "0.0.37",
   "author": "EnconvoAI",
   "license": "MIT",
   "categories": [
@@ -19,11 +19,31 @@
       "description": "Export context messages to Markdown file.",
       "icon": "md.png",
       "mode": "no-view",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "user_input_text": {
+            "type": "string",
+            "description": "The user input text"
+          },
+          "input_text": {
+            "type": "string",
+            "description": "The input text"
+          },
+          "selection_text": {
+            "type": "string",
+            "description": "The selected text from current active application"
+          }
+        },
+        "required": [
+          "user_input_text"
+        ]
+      },
       "preferences": []
     }
   ],
   "dependencies": {
-    "@enconvo/api": "^0.1.161"
+    "@enconvo/api": "link:/Users/ysnows/Documents/Project/enconvo.nodejs/enconvo_api"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
