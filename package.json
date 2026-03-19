@@ -1,6 +1,6 @@
 {
   "$schema": "https://enconvo.com/schemas/extension.json",
-  "version": "0.0.37",
+  "version": "0.0.90",
   "author": "EnconvoAI",
   "license": "MIT",
   "categories": [
@@ -9,7 +9,7 @@
   "type": "module",
   "name": "exporter",
   "title": "Exporter",
-  "description": "Export context messages to file.",
+  "description": "Export conversation content and documents to Markdown, PDF, or audio (MP3) files using text-to-speech.",
   "icon": "icon.png",
   "minAppVersion": "1.8.8",
   "commands": [
@@ -19,6 +19,7 @@
       "description": "Export context messages to Markdown file.",
       "icon": "md.png",
       "mode": "no-view",
+      "hidden": true,
       "parameters": {
         "type": "object",
         "properties": {
@@ -43,7 +44,7 @@
     }
   ],
   "dependencies": {
-    "@enconvo/api": "link:/Users/ysnows/Documents/Project/enconvo.nodejs/enconvo_api"
+    "@enconvo/api": "link:../../enconvo.nodejs/enconvo_api"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
@@ -57,7 +58,7 @@
     "lint:fix": "npm run lint --fix",
     "format": "prettier --write \"**/*.ts\"",
     "format:check": "prettier --list-different \"**/*.ts\"",
-    "build": "enconvo",
-    "dev": "enconvo --dev"
+    "build": "enconvo dev",
+    "dev": "enconvo dev --dev"
   }
 }
